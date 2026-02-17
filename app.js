@@ -47,11 +47,11 @@ const loadTrendingCard = async() =>{
 const displayTrendingCard = (details) =>{
     
     const trendingCardContainer = document.getElementById('trending-card-container');
-    const sliceDetails = details.slice(0, 3)
+    const selectedItems = details.filter(items => items.rating.rate > 4.6);
+    const sliceDetails = selectedItems.slice(0, 3)
     sliceDetails.forEach(detail => {
-      console.log(detail);
         const div = document.createElement('div');
-        div.classList = `card  p-3 shadow-sm w-full flex justify-between`;
+        div.classList = `card mx-3 md:mx-0 p-3 shadow  flex justify-between`;
         div.innerHTML = `
         <figure class="bg-gray-300 rounded-none">
               <img class=" h-96"
@@ -70,16 +70,21 @@ const displayTrendingCard = (details) =>{
               <p class="font-bold mb-4 mt-3">$${detail.price}</p>
               <div class="card-actions justify-around w-100%">
                 <div class="btn w-5/12 rounded-lg"><span><i class="fa-regular fa-eye"></i></span> Details</div>
-                <div class="btn w-5/12 bg-[#4F46E5] text-white rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add</div>
+                <div onclick="handleCartCount()" class="btn w-5/12 bg-[#4F46E5] text-white rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add</div>
               </div>
             </div>
         `;
-        trendingCardContainer.append(div)
+        trendingCardContainer.appendChild(div)
     });
 }
 
 
 
-
+let count = 0;
+const handleCartCount = () =>{
+    count++
+    const cartCount = document.getElementById('cart-count');
+    cartCount.innerHTML = count
+}
 
 loadTrendingCard()

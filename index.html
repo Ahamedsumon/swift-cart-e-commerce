@@ -27,24 +27,22 @@
   </head>
   <body class="inter-fonts">
     <!-- Header section starts here -->
-    <header class="max-w-6xl mx-auto py-5">
-      <nav class="flex justify-between items-center">
+    <header class="w-full md:max-w-6xl md:mx-auto py-5">
+      <nav class="flex justify-between mx-2 md:mx-0">
         <div>
           <a href="index.html" class="text-3xl font-bold text-[#4e38f5]">SwiftCart</a>
         </div>
-        <div class="invisible md:visible">
+        <div class="hidden md:block">
           <ul class="flex gap-6">
             <li ><a href="index.html">Home</a></li>
             <li ><a href="products.html">Products</a></li>
-            <li ><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li ><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
         
-        <div class="flex items-center">
-          <a id="menu-bar" href="" class="text-2xl"
-            ><i class="fa-solid fa-cart-shopping"></i
-          ></a>
+        <div class="flex items-center gap-3">
+          <a id="menu-bar" href="" class="text-2xl"><i class="fa-solid fa-cart-shopping relative"><span id="cart-count" class="absolute text-xs font-thin text-white px-1 rounded-full left-5 -top-3 bg-[#4e38f5]">0</span></i></a>
           <div class="xs:visible md:invisible">
             <i
               onclick="handleMenuBar()"
@@ -53,7 +51,7 @@
 
             <ul
               id="menu-list"
-              class="flex flex-col gap-1 absolute right-1 top-10 w-20 invisible"
+              class="flex flex-col gap-1 absolute right-5 top-18 w-20 bg-white invisible shadow rounded"
             >
               <li class="rounded-sm hover:bg-gray-200 text-center">
                 <a href="index.html">Home</a>
@@ -62,10 +60,10 @@
                 <a href="products.html">Products</a>
               </li>
               <li class="rounded-sm hover:bg-gray-200 text-center">
-                <a href="about.html">About</a>
+                <a href="#">About</a>
               </li>
               <li class="rounded-sm hover:bg-gray-200 text-center">
-                <a href="contact.html">Contact</a>
+                <a href="#">Contact</a>
               </li>
             </ul>
           </div>
@@ -84,14 +82,14 @@
         >
           <div class="hero-overlay bg-[#1f2533CC]"></div>
           <div class="text-neutral-content border w-full">
-            <div class="max-w-6xl mx-auto py-20 md:py-40">
-              <h1 class="mb-5 text-5xl font-bold">Best Collection For You</h1>
-              <p class="mb-5 max-w-lg">
+            <div class=" max-w-6xl mx-auto py-20 md:py-40">
+              <h1 class="mx-2 md:mx-0  mb-5 text-3xl md:text-5xl font-bold">Best Collection For You</h1>
+              <p class="mx-2 md:mx-0  mb-5 max-w-lg">
                 Discover the latest trends in fashion, electronics, and more.
                 Shop with confidence and style at SwiftCart
               </p>
               <button
-                class="btn bg-[#4e38f5] text-white border-[#4e38f5] shadow"
+                class="btn mx-2 md:mx-0  bg-[#4e38f5] text-white border-[#4e38f5] shadow"
               >
                 Shop Now
               </button>
@@ -109,13 +107,13 @@
             We provide the best shopping experience with top-notch services
           </p>
         </div>
-        <div class="flex flex-col gap-15 md:flex-row md:gap-3">
+        <div class="mx-3 md:mx-0 flex flex-col gap-15 md:flex-row md:gap-3">
           <div class="shadow p-5 rounded-lg relative bg-white">
             <div class="absolute -top-6 bg-gray-200 p-2 rounded-lg shadow">
               <i class="fa-regular fa-truck text-[#4e38f5] text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold my-4">Fast Delivery</h3>
-            <p class="max-w-10/12 text-gray-500">
+            <p class="max-w-5/12 text-gray-500">
               Get your orders delivered to your doorstep quickly and
               efficiently.
             </p>
@@ -153,8 +151,8 @@
       </section>
       <!-- Trending Fashion Item -->
       <section id="trending-section" class="max-w-6xl mx-auto my-20">
-        <h3 class="text-3xl font-semibold my-5">Trending Now</h3>
-        <div id="trending-card-container" class="flex  gap-3 w-full ">
+        <h3 class="ml-3 md:ml-0 text-3xl font-semibold my-5 ">Trending Now</h3>
+        <div id="trending-card-container" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full">
         </div>
       </section>
 
@@ -165,18 +163,18 @@
     <!-- Main section ends here -->
 
     <!-- footer section starts here -->
-    <footer class="bg-[#1E293B] text-gray-500">
-      <section class="max-w-6xl mx-auto py-20">
-        <div class="flex justify-between">
-          <div class="max-w-4/12">
+    <footer class="px-3 md:px-0 bg-[#1E293B] text-gray-500">
+      <section class="max-w-6xl mx-auto py-5 md:py-15">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="sm:max-w-5/12 md:max-w-4/12 ">
             <a href="#" class="text-3xl font-bold text-[#4e38f5]">SwiftCart</a>
             <p class=" my-3">Your one-stop shop for all your fashion and lifestyle needs. Quality products, fast delivery, and excellent support</p>
           </div>
           <div class="font-bold">
             <h3 class="mb-3">QUICK LINKS</h3>
             <ul class="flex flex-col gap-3">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Products</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>
             </ul>
@@ -191,15 +189,16 @@
             </ul>
           </div>
 
-          <div class="max-w-4/12 font-bold">
+          <div class="sm:max-w-5/12 md:max-w-4/12 font-bold">
             <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
             <p class="my-4">The latest news, articles, and resourses, sent to your inbox weekly.</p>
-            <input class="py-1.5 text-center max-w-6/12" type="email" name="" id="email" placeholder="Enter your email">
-            
-            <button class="btn bg-[#4e38f5] border-none outline-none shadow text-white">Subscribe</button>
+            <div class="flex flex-col md:flex-row gap-2">
+              <input class=" py-1.5 border-none outline-none text-center w-full md:max-w-6/12 bg-white rounded-lg" type="email" name="" id="email" placeholder="Enter your email">
+            <button class="btn bg-[#4e38f5] border-none outline-none shadow text-white rounded-md">Subscribe</button>
+            </div>
           </div>
         </div>
-        <div class="flex items-center justify-between border-t border-t-gray-600 mt-5">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between border-t border-t-gray-600 mt-5">
          
           <div >
             <p class="pt-5"><span><i class="fa-solid fa-copyright"></i></span> 2026 SwiftCart, Inc.All rights reserved</p>
