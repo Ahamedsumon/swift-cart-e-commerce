@@ -139,5 +139,3 @@ Clicking the "Details" button on a card opens a modal with full product details:
 - **GitHub Repository:** YOUR_REPO_URL_HERE
 
 
-### 📅 Deadline For 60 marks: 17th February, 2026 (11:59 pm ⏱️)
-- Note: There won't be any 50 or 30 marks submission deadline. Only 60 marks submission deadline. After 17th February, 2026 (11:59 pm ⏱️) no submission will be accepted.

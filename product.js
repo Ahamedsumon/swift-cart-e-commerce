@@ -15,6 +15,8 @@ const hideMenueList = () =>{
     console.log('clickeddddf');
 }
 
+
+
 // Load category 
 const loadCategory = async() =>{
     const url = "https://fakestoreapi.com/products/categories";
@@ -22,6 +24,17 @@ const loadCategory = async() =>{
     const data = await res.json();
     displayCategory(data)
 };
+
+
+const handleLoader = (loadingStatus) =>{
+    const loader = document.getElementById('loader')
+    if(loadingStatus === true){
+        loader.classList.remove('hidden')
+    }else{
+        loader.classList.add('hidden')
+    }
+}
+
 
 // const displayCategory = (categories) => {
 //     const categoryBtnContainer = document.getElementById('category-btn-container');
@@ -91,9 +104,10 @@ const displayProducts = (details) =>{
     
     const productsCardContainer = document.getElementById('products-card-container');
     productsCardContainer.innerHTML = '';
+    handleLoader(true)
     // const sliceDetails = details.slice(0, 3)
     details.forEach(detail => {
-      
+       
         const div = document.createElement('div');
         div.classList = `card   p-3 shadow-sm w-full flex justify-between`;
         div.innerHTML = `
@@ -119,6 +133,7 @@ const displayProducts = (details) =>{
             </div>
         `;
         productsCardContainer.append(div)
+        handleLoader(false)
     });
 }
 
@@ -153,3 +168,7 @@ const handleCartCount = () =>{
     const cartCount = document.getElementById('cart-count');
     cartCount.innerHTML = count
 }
+
+
+
+
