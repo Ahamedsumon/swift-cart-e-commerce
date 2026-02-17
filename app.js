@@ -12,8 +12,12 @@ const handleMenuBar = () =>{
 
 const hideMenueList = () =>{
     menuList.classList.add('visible')
-    console.log('clickeddddf');
+    
 }
+
+
+
+
 
 
 

@@ -37,24 +37,40 @@ const loadCategory = async() =>{
 //     });
 // }
 
+// load all products
+const loadAllProducts = async() =>{
+   const allProductsBtn = document.getElementById('all-products-btn');
+   allProductsBtn.classList.add('active')
+    const url = `https://fakestoreapi.com/products`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayProducts(data)
+    
+}
+
+loadAllProducts()
+
 const displayCategory = (categories) => {
     const categoryBtnContainer = document.getElementById('category-btn-container');
-
     categories.forEach(category => {
-
         const div = document.createElement('div');
-
         const button = document.createElement('button');
         button.textContent = category;
-        button.className = "btn rounded-3xl hover:bg-[#4F46E5] hover:text-white";
-
-        button.addEventListener("click", () => {
+        button.classList = "btn rounded-3xl hover:bg-[#4F46E5] hover:text-white";
+        button.classList.remove("active")
+        button.addEventListener("click", function(){
             loadProducts(category);
+            const currentActive = document.querySelector('.active');
+            if(currentActive){
+                currentActive.classList.remove("active")
+            }
+            this.classList.add("active")
+            
         });
-
         div.appendChild(button);
-        categoryBtnContainer.appendChild(div);
+        categoryBtnContainer.appendChild(div);  
     });
+    
 }
 
 loadCategory()
@@ -64,21 +80,12 @@ loadCategory()
 
 //  Load Products 
 const loadProducts = async(category) =>{
-  console.log(category)
-    const url = `https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`;
+    const url = `https://fakestoreapi.com/products/category/${(category)}`;
     const res = await fetch(url);
     const data = await res.json();
     displayProducts(data)
 }
 
-// load all products
-const loadAllProducts = async() =>{
-  
-    const url = `https://fakestoreapi.com/products`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayProducts(data)
-}
 
 const displayProducts = (details) =>{
     
