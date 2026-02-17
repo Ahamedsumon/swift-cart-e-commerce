@@ -9,46 +9,10 @@ const handleMenuBar = () =>{
         menuList.classList.add('invisible')
     }
 }
-
 const hideMenueList = () =>{
     menuList.classList.add('visible')
     console.log('clickeddddf');
 }
-
-
-
-// Load category 
-const loadCategory = async() =>{
-    const url = "https://fakestoreapi.com/products/categories";
-    const res = await fetch(url);
-    const data = await res.json();
-    displayCategory(data)
-};
-
-
-const handleLoader = (loadingStatus) =>{
-    const loader = document.getElementById('loader')
-    if(loadingStatus === true){
-        loader.classList.remove('hidden')
-    }else{
-        loader.classList.add('hidden')
-    }
-}
-
-
-// const displayCategory = (categories) => {
-//     const categoryBtnContainer = document.getElementById('category-btn-container');
-//     categories.forEach(category => {
-
-       
-
-//         const div = document.createElement('div');
-//         div.innerHTML = `
-//         <button onclick='loadProducts("${category}")' class="btn rounded-3xl hover:bg-[#4F46E5] hover:text-white">${category}</button>
-//         `
-//         categoryBtnContainer.appendChild(div)
-//     });
-// }
 
 // load all products
 const loadAllProducts = async() =>{
@@ -63,6 +27,22 @@ const loadAllProducts = async() =>{
 
 loadAllProducts()
 
+// Load category 
+const loadCategory = async() =>{
+    const url = "https://fakestoreapi.com/products/categories";
+    const res = await fetch(url);
+    const data = await res.json();
+    displayCategory(data)
+};
+const handleLoader = (loadingStatus) =>{
+    const loader = document.getElementById('loader')
+    if(loadingStatus === true){
+        loader.classList.remove('hidden')
+    }else{
+        loader.classList.add('hidden')
+    }
+}
+//  Display products by category
 const displayCategory = (categories) => {
     const categoryBtnContainer = document.getElementById('category-btn-container');
     categories.forEach(category => {
@@ -70,14 +50,14 @@ const displayCategory = (categories) => {
         const button = document.createElement('button');
         button.textContent = category;
         button.classList = "btn rounded-3xl hover:bg-[#4F46E5] hover:text-white";
-        button.classList.remove("active")
+        button.classList.remove("category-active")
         button.addEventListener("click", function(){
             loadProducts(category);
-            const currentActive = document.querySelector('.active');
+            const currentActive = document.querySelector('.category-active');
             if(currentActive){
-                currentActive.classList.remove("active")
+                currentActive.classList.remove("category-active")
             }
-            this.classList.add("active")
+            this.classList.add("category-active")
             
         });
         div.appendChild(button);

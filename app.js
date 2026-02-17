@@ -20,25 +20,6 @@ const hideMenueList = () =>{
 
 
 
-
-// Routin menu list 
-// const productsNav = document.getElementById('products-nav-item');
-// productsNav.addEventListener('click', function(){
-//   console.log('clicked');
-//   const heroSection = document.getElementById('hero-section');
-//   const featureSection = document.getElementById('feature-section')
-//   const trendingSection = document.getElementById('trending-section')
-//   heroSection.classList.add('hidden')
-//   featureSection.classList.add('hidden')
-//   trendingSection.classList.add('hidden')
-
-//   const allProducts = document.getElementById('all-products')
-//   allProducts.classList.remove('hidden')
-// })
-
-
-
-
 // Trending section card
 
 const loadTrendingCard = async() =>{
@@ -73,7 +54,7 @@ const displayTrendingCard = (details) =>{
               </h2>
               <p class="font-bold mb-4 mt-3">$${detail.price}</p>
               <div class="card-actions justify-around w-100%">
-                <div class="btn w-5/12 rounded-lg"><span><i class="fa-regular fa-eye"></i></span> Details</div>
+                <div onclick="loadProductsDetails(${detail.id})" class="btn w-5/12 rounded-lg"><span><i class="fa-regular fa-eye"></i></span> Details</div>
                 <div onclick="handleCartCount()" class="btn w-5/12 bg-[#4F46E5] text-white rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add</div>
               </div>
             </div>
@@ -83,7 +64,30 @@ const displayTrendingCard = (details) =>{
 }
 
 
+// Load individual product details
+const loadProductsDetails = async(id) =>{
+    const url = `https://fakestoreapi.com/products/${id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayProductsDetails(data)
+}
 
+const displayProductsDetails = (productsDetails) =>{
+    console.log(productsDetails);
+    const modalContent = document.getElementById('modal-content');
+    modalContent.innerHTML = `
+    <h3 class="text-lg font-bold">${productsDetails.title}</h3>
+    <p class="py-4">${productsDetails.description}</p>
+    <p><span class="text-[#EAB308]"><i class="fa-regular fa-star"></i></span class="font-bold"> ${productsDetails.rating?.rate} <span class="text-gray-500">(${productsDetails.rating?.count})</span></p>
+    <p class="font-bold mb-4 mt-3">$${productsDetails.price}</p>
+    <div class="btn bg-[#4F46E5] text-white rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Buy Now</div>
+    `
+    
+    document.getElementById('my_modal_5').showModal()
+    
+}
+
+// handle cart counter
 let count = 0;
 const handleCartCount = () =>{
     count++

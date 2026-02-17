@@ -1,141 +1,18 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT (SwiftCart E-Commerce)
-
-
-## Repository: Create your own public repository and submit the link.
-
----
-## 🛍️ API Endpoints
----
-1. Get 🛍️ All Products
-```bash
-https://fakestoreapi.com/products
-```
-
-2. Get 🛍️ All Categories
-```bash
-https://fakestoreapi.com/products/categories
-```
-
-3. Get 🛍️ Products by Category
-```bash
-https://fakestoreapi.com/products/category/${category}
-```
-
-Example:
-```bash
-https://fakestoreapi.com/products/category/jewelery
-```
-
-4. Get 🛍️ Single Product Detail
-```bash
-https://fakestoreapi.com/products/${id}
-```
-
-Example:
-```bash
-https://fakestoreapi.com/products/1
-```
-
----
-
-## 🎯 Project Specifications (UI/UX)
-
-#### 1) Navbar
-- Website **logo/name** ("SwiftCart") on the **left**
-- **Menu items** (Home, Products, About, Contact) in the **center**
-- **Cart Icon/Button** on the **right** (showing item count is a bonus)
-
-#### 2) Banner / Hero Section
-- A **background image** (related to shopping/fashion/electronics)
-- A **title** (e.g., "Best Collection For You") and **subtitle**
-- A **centered button** (e.g., "Shop Now")
-
-#### 3) Features / Why Choose Us
-- **Section heading**
-- **3-4 items** highlighting features like "Fast Delivery", "24/7 Support", "Secure Payment", etc. (Icon + Title + Short Text)
-
-#### 4) Trending / Top Rated Section
-- Show **3 top-rated products** (you can filter by rating or just pick the first 3) based on API data or hardcoded for layout practice.
-
-#### 5) Newsletter & Footer
-- **Newsletter Subscription Form**: Email input + Subscribe button.
-- **Footer** with copyright info, social links, and quick links.
-
-#### 6) Responsiveness
-- Website must be **mobile responsive** 
-
----
-#### 7) Create a README file to answer the following questions-
-
-> **⚠️ Warning:** Do not use any AI tools to answer these questions. You must write the answers in **Bangla**.
 
 #### 1) What is the difference between `null` and `undefined`?
+Answer: null এবং undefined এর মধ্যে সবচেয়ে বড় differece হচ্ছে  null ডেভেলপার সেট করে আর undefined জাভাস্ক্রিপ্ট সেট করে (ডেভেলপার ও সেট করতে পারে কিন্তু এটা রিকমেন্ডড না )৷ null মানে হচ্ছে ঐখানে কোনে মান নেই আর  undefined মানে হচ্ছে  সেটা initialize হইছে কিন্তু মান সেট করা হই নি
 
 #### 2) What is the use of the `map()` function in JavaScript? How is it different from `forEach()`?
+Answer: map() প্রত্যেকটা element এর উপরে কিছু একটা কাজ করে নতুন একটা array রিটার্ন করে আর forEach() প্রত্যেকটা element এর উপর কাজ করে ঠিকই কিন্তু  কিছু রিটার্ন করে না তাই আমরা সাধারণত forEach কোনো কিছু দেখানোর কাজে বেশি ব্যবহার করে থাকি
 
 #### 3) What is the difference between `==` and `===`?
+Answer: double equal (==) এবং triple equal (===) এর মধ্যে বড় পার্থক্য টা হচ্ছে  ডাবল ইকোয়াল(==)  টাইপ চেক করে না আর ট্রিপল ইকোয়াল মানের সাথে সাথে টাইপ ও চেক করে
 
 #### 4) What is the significance of `async`/`await` in fetching API data?
+Answer: async/await ব্যবহার করে খুব সহজেই API থেকে ডাটা  fetch করা যায় async/await কোডের রিডে বিলটি বাড়ায়  async একটি প্রমিজ রিটার্ন করে আর await প্রমিজ রিজলভ কিংবা রিজেক্ট হওয়া পর্যন্ত বাকি কোডকে execution থেকে থামিয়ে রাখে
 
 #### 5) Explain the concept of Scope in JavaScript (Global, Function, Block).
-
-## ⚡ Dynamic Features & Functionalities
-
-1) Category Loading
-Load Product Categories dynamically on the UI (e.g., as filter buttons or a dropdown).
-
-2) Category Click → Product Data
-On clicking a category: load products of that specific category.
-Display in a grid layout (e.g., 3 or 4 columns).
-
-3) Card Contents
-Each product card must include:
-- **Image** (from API)
-- **Title** (truncated if too long)
-- **Price** ($ value)
-- **Category** (badge or text)
-- **Rating** (Visualize stars or just show the number)
-- **Details Button**
-- **Add to Cart button**
-
-4) Modal on "Details" Click
-Clicking the "Details" button on a card opens a modal with full product details:
-- Full Title
-- Full Description
-- Price & Rating
-- "Buy Now" or "Add to Cart" button in modal.
-
-## 🧪 Challenges (Optional)
-
-    1) Add to Cart Interaction
-    Clicking "Add to Cart":
-    - Adds the product to a Cart list/array.
-    - Updates a Cart Count in the Navbar.
-    - (Optional) Persist in LocalStorage.
-
-    2) Cart Calculation
-    Show a summary (maybe in a sidebar or a separate section/modal) that lists added items and calculates the **Total Price**.
-
-    3) Remove from Cart
-    Ability to remove an item from the cart and update the Total Price instantly.
-
-    4) Loading Spinner
-    Show a loading spinner or skeleton loader while fetching data from the API.
-
-    5) Active State
-    Highlight the currently selected category button.
-
-🧰 Technology Stack:
-    HTML
-    CSS (Vanilla / Tailwind / DaisyUI)
-    JavaScript (Vanilla only, no frameworks like React/Vue for this assignment)
-
-📌 Rules
-✅ At least 5 meaningful commits
-❌ No dummy text where real data can be shown.
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE
-- **GitHub Repository:** YOUR_REPO_URL_HERE
-
-
+Answer: জাভাস্ক্রিপ্টে স্কোপ হচ্ছে একটা boundry মানে কোডটা কোথায় ডিক্লেয়ার করা হয়ছে এবং কোথায় এটা ব্যবহার করা যাবে তার ই একটা কনসেপ্ট৷ তিন ধরনের স্কোপ আছে (global, function, block)
+1. Global scope: হচ্ছে সেই স্কোপ যেটাকে ঐই ফাইলের যোকোনো জায়গা থেকে access করা যায়
+2. functon scope: হচ্ছে  একটা ভেরিয়েবল একটা ফাংশন এর ভিতর ডিক্লেয়ার করা হইছে সেই ভেরিয়েবল টি শুধু ঐ ফাংশন এর ভিতর ই access করা যাবে বাহির থেকে access করা যাবে না 
+3. block scope: হচ্ছে  যেইসব ভেরিয়েবল {} bracket এর ভিতর ডিক্লেয়ার করা হয় সেগুলোকে বুঝায় এবং এই গুলোকে {} bracket এর বাহির থেকে access করা যায় না
